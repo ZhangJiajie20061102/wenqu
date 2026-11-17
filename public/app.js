@@ -34,7 +34,11 @@ function timeAgo(ts) {
 function colorOf(name) {
   let h = 0;
   for (const ch of String(name)) h = (h * 31 + ch.codePointAt(0)) % 360;
-  return `hsl(${h} 52% 46%)`;
+  // 黑金主题：色相锁在 32°~46°，只让明度和饱和度轻微变化来区分不同用户
+  const hue = 32 + (h % 15);
+  const lum = 22 + (h % 5) * 4;
+  const sat = 26 + (h % 4) * 5;
+  return `linear-gradient(150deg, hsl(${hue} ${sat}% ${lum + 7}%), hsl(${hue} ${sat + 6}% ${lum}%))`;
 }
 
 function avatar(user, cls) {
@@ -477,7 +481,7 @@ function renderAuth(mode) {
         </div>
 
         <div class="form-foot" style="justify-content:space-between">
-          <a href="#/${isLogin ? 'register' : 'login'}" style="color:var(--blue);font-size:13.5px">
+          <a href="#/${isLogin ? 'register' : 'login'}" style="color:var(--gold);font-size:13.5px">
             ${isLogin ? '没有账号？注册' : '已有账号？登录'}
           </a>
           <button class="btn btn-primary" id="auth-submit">${isLogin ? '登录' : '注册'}</button>
@@ -586,7 +590,7 @@ async function route() {
     } else if (seg[0] === 'register') {
       renderAuth('register');
     } else {
-      app.innerHTML = `<div class="full card empty"><strong>页面不存在</strong><a href="#/" style="color:var(--blue)">回到首页</a></div>`;
+      app.innerHTML = `<div class="full card empty"><strong>页面不存在</strong><a href="#/" style="color:var(--gold)">回到首页</a></div>`;
     }
     if (token !== renderToken) return; // 路由已经切走，丢弃这次渲染
   } catch (err) {
