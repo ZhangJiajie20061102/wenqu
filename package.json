@@ -1,0 +1,19 @@
+{
+  "name": "zhifou",
+  "version": "1.0.0",
+  "private": true,
+  "description": "知否 — 一个可运行的问答社区（知乎式），Node + Express + SQLite，零原生依赖",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server.js",
+    "seed": "node --disable-warning=ExperimentalWarning seed.js",
+    "reset": "node --disable-warning=ExperimentalWarning seed.js --reset"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

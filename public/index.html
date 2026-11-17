@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>知否 · 有问题，就有答案</title>
+<meta name="description" content="知否 —— 一个可以自己跑起来的问答社区。提问、回答、投票、评论，数据存在本地 SQLite。">
+<meta name="theme-color" content="#1161ec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231161ec'/%3E%3Ctext x='16' y='23' font-size='18' font-family='system-ui' font-weight='700' fill='white' text-anchor='middle'%3E%E9%97%AE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="logo" href="#/">
+      <span class="logo-mark">问</span>
+      <span>知否</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#/" data-nav="/">首页</a>
+      <a href="#/hot" data-nav="/hot">热榜</a>
+      <a href="#/unanswered" data-nav="/unanswered">待回答</a>
+    </nav>
+
+    <form class="search" id="search-form" role="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="search-input" type="search" placeholder="搜索问题、话题" autocomplete="off" aria-label="搜索">
+    </form>
+
+    <div class="top-actions" id="actions"></div>
+  </div>
+</header>
+
+<main class="app" id="app">
+  <div class="card skeleton">正在加载…</div>
+</main>
+
+<footer class="footer">
+  <span>知否 · 一个可运行的问答社区示例 · Node + Express + SQLite</span>
+  <span>数据均来自本地演示库，非真实用户内容</span>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

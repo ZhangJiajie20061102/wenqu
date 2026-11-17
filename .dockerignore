@@ -1,0 +1,13 @@
+# 依赖装完就可以跑，Node 22 自带 SQLite
+node_modules
+npm-debug.log
+
+# 本地数据库不进镜像，容器里第一次启动会重建
+data.db
+data.db-wal
+data.db-shm
+
+.git
+.gitignore
+README.md
+docs
