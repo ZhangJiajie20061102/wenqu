@@ -1,4 +1,4 @@
-# 知否 · ZhiFou
+# 墨问 · Mowen
 
 一个可以自己跑起来的问答社区。提问、回答、投票、评论、话题、热榜，数据存在本地 SQLite 里，
 不需要注册任何云服务，`npm start` 就有东西可点。界面是**黑金暗色主题**，无 UI 框架、无构建步骤。
@@ -6,6 +6,8 @@
 ![问答列表](docs/preview-feed.png)
 
 ![问题详情](docs/preview-question.png)
+
+> 名字取「墨」与「问」：墨是这身黑金配色的墨，问是这里唯一的事。
 
 ## 为什么做这个
 
@@ -35,8 +37,8 @@
 需要 **Node.js 22.5+**（用到内置的 `node:sqlite`，不需要编译 `better-sqlite3`）。
 
 ```bash
-git clone https://github.com/ZhangJiajie20061102/zhifou.git
-cd zhifou
+git clone https://github.com/ZhangJiajie20061102/mowen.git
+cd mowen
 npm install        # 只装 Express 一个依赖
 npm run seed       # 写入演示数据：10 个用户 / 10 个问题 / 16 条回答
 npm start          # http://localhost:3000
@@ -57,7 +59,7 @@ npm start          # http://localhost:3000
 ## 目录结构
 
 ```
-zhifou/
+mowen/
 ├── server.js            # Express 应用：路由、校验、热榜排序，约 500 行
 ├── db.js                # 建表 DDL、索引、事务封装
 ├── auth.js              # 密码哈希、会话、登录中间件
@@ -139,8 +141,8 @@ JWT 好用，但「退出登录」在 JWT 里是个难题（要么等过期，�
 本地验证镜像：
 
 ```bash
-docker build -t zhifou .
-docker run -p 3000:3000 zhifou
+docker build -t mowen .
+docker run -p 3000:3000 mowen
 ```
 
 ## 已知限制
