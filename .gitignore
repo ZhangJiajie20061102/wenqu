@@ -7,3 +7,4 @@ data.db-shm
 .DS_Store
 Thumbs.db
 docs/_tmp*
+_jar*.txt
