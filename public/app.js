@@ -1,7 +1,7 @@
 'use strict';
 
 /* ==========================================================================
-   墨问 · 前端
+   问渠 · 前端
    原生 JS + 哈希路由。所有用户内容都经过转义再插入，渲染层不用 innerHTML 吃原始数据。
    ========================================================================== */
 
@@ -455,7 +455,7 @@ function renderAuth(mode) {
   app.innerHTML = `
     <div class="full" style="max-width:420px;margin:32px auto 0">
       <div class="card card-pad">
-        <h2 style="margin:0 0 6px;font-size:20px">${isLogin ? '登录墨问' : '注册新账号'}</h2>
+        <h2 style="margin:0 0 6px;font-size:20px">${isLogin ? '登录问渠' : '注册新账号'}</h2>
         <p style="margin:0 0 20px;color:var(--muted);font-size:13.5px">
           ${isLogin ? '演示账号：chenmo@example.com / 123456' : '昵称和邮箱都不能重复，密码至少 6 位'}
         </p>

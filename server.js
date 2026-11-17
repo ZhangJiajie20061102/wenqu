@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * 墨问 · 一个可运行的问答社区
+ * 问渠 · 一个可运行的问答社区
  * Node + Express + node:sqlite，无原生依赖、无 ORM、无前端构建。
  */
 
@@ -507,7 +507,7 @@ app.use((err, req, res, next) => {
 
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`墨问已启动 → http://localhost:${PORT}`);
+    console.log(`问渠已启动 → http://localhost:${PORT}`);
   });
 }
 
